@@ -1,11 +1,19 @@
 package org.cases.dataBaseXpath;
 
 public class BaseXpath  {
+    //  Стартовая страница
     public static final String LINK_TO_SITE = "https://vatutinki.ru";
     // Кнопка вверху сайта для перехода к предложению
     public static final String HEADER_LINK_BUTTON = "//h2[contains(text(), \"Выберите квартиру\")]/../../../../header/a";
     // Текст на кнопке вверху сайта
     public static final String HEADER_LINK_TEXT = "//h2[contains(text(), \"Выберите квартиру\")]/../../../../header/a/p";
+    // Отображение теста баннера "Старт продаж"
+    public static final String SALES_START_BANNER = "//h2[contains(text(), \"Выберите квартиру\")]/../../div/div[contains(@class, \"image-lazy is-absolute is-center img_Z6SKV\")]/img";
+
+    public static final String TITLE_BANNER = "//h2[contains(text(), \"Выберите квартиру\")]/../../div/div[contains(@class, \"content_WPLni\")]/h2";
+
+    public static final String SUBTITLE_BANNER = "//h2[contains(text(), \"Выберите квартиру\")]/../../div/div[contains(@class, \"content_WPLni\")]/div/p/span";
+
 
 }
 

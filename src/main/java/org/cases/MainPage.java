@@ -11,12 +11,26 @@ public class MainPage extends BaseXpath{
 
     @Test
     public void HeaderLinkButton(){
+//      Проверка кнопки в хедере на переходы и отображение
         open(LINK_TO_SITE);
-        $(byXpath(HEADER_LINK_BUTTON)).shouldBe(visible);
         $(byXpath(HEADER_LINK_TEXT)).shouldHave(text("Заселение корпуса 2/2"));
-        $(byXpath(HEADER_LINK_BUTTON)).click();
+        $(byXpath(HEADER_LINK_BUTTON))
+                .shouldBe(visible)
+                .click();
         $(byXpath(HEADER_LINK_TEXT)).isDisplayed();
     }
+    @Test
+    public void SalesStartBanner(){
+//      Проверка баннера
+        open(LINK_TO_SITE);
+        $(byXpath(TITLE_BANNER))
+                .shouldBe(visible)
+                .shouldHave(text("СТАРТ ПРОДАЖ"));
+        $(byXpath(SUBTITLE_BANNER))
+                .shouldBe(visible)
+                .shouldHave(text("Микрорайон Заречный"));
+    }
+
 
 
    /* @Test
