@@ -1,23 +1,20 @@
 package org.example;
 
+import org.example.dataBaseXpath.BaseXpath;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.*;
 
-public class MainPage{
-    BaseXpath bx = new BaseXpath();
+public class MainPage extends BaseXpath{
+//        BaseXpath bx = new BaseXpath();
 
     @Test
     public void test(){
 
         open("https://vatutinki.ru/flats");
-        $(byXpath("//span[contains(text(), \"Машиноместа\")]/..")).click();
-
-
+        $(byXpath(showApartments)).click();
     }
-
 
 
    /* @Test
