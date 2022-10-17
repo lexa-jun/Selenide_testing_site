@@ -1,4 +1,4 @@
-package org.example;
+package org.cases;
 
 public class Main {
 

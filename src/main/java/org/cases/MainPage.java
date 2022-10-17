@@ -1,19 +1,21 @@
-package org.example;
+package org.cases;
 
-import org.example.dataBaseXpath.BaseXpath;
+import org.cases.dataBaseXpath.BaseXpath;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends BaseXpath{
-//        BaseXpath bx = new BaseXpath();
 
     @Test
-    public void test(){
-
-        open("https://vatutinki.ru/flats");
-        $(byXpath(showApartments)).click();
+    public void HeaderLinkButton(){
+        open(LINK_TO_SITE);
+        $(byXpath(HEADER_LINK_BUTTON)).shouldBe(visible);
+        $(byXpath(HEADER_LINK_TEXT)).shouldHave(text("Заселение корпуса 2/2"));
+        $(byXpath(HEADER_LINK_BUTTON)).click();
+        $(byXpath(HEADER_LINK_TEXT)).isDisplayed();
     }
 
 
@@ -25,7 +27,7 @@ public class MainPage extends BaseXpath{
         $(byXpath("//span[contains(text(), \"Машиноместа\")]/..")).click(); // Поиск кнопки по xpath и нажатие
         $(byXpath(bx.showParking)).shouldHave(text("ПОКАЗАТЬ КВАРТИРЫ")); // Проверка отображение текста
         $(byXpath(bx.showApartments)).isDisplayed(); // Проверка что текст с предыдущей страницы не отображается
-        System.out.println($(byXpath(bx.showApartments)).isDisplayed()); // Отображение состаяния isDisplayed
+        System.out.println($(byXpath(bx.showApartments)).isDisplayed()); // Отображение состояния isDisplayed
         Thread.sleep(3000); // Таймер ожидания
     }
 }*/
