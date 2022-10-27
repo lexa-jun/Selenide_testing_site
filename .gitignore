@@ -1,2 +1,5 @@
 # Project exclude paths
 /target/
+/build/
+/.idea/
+/NOTE.md
