@@ -4,8 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -19,7 +18,7 @@ public class MainPageTest extends BaseXpath {
 
         // Проверка кнопки в хедере на переходы и отображение
         open(LINK_TO_SITE);
-        $(byXpath(BUTTON_TEXT_OFFER_SITE_HEADER)).shouldHave(text("Заселение корпуса 2/2"));
+        $(byXpath(BUTTON_TEXT_OFFER_SITE_HEADER)).shouldNotBe(empty);
         $(byXpath(BUTTON_OFFER_IN_SITE_HEADER))
                 .shouldBe(visible)
                 .click();
@@ -34,11 +33,11 @@ public class MainPageTest extends BaseXpath {
         open(LINK_TO_SITE);
         $(byXpath(BANNER_START_SALES_ZARECHNY))
                 .shouldBe(visible)
-                .shouldHave(text("СТАРТ ПРОДАЖ"))
+                .shouldNotBe(empty)
                 .scrollIntoView(false);
         $(byXpath(BANNER_DESCRIPTION_START_SALES_ZARECHNY))
                 .shouldBe(visible)
-                .shouldHave(text("Микрорайон Заречный"));
+                .shouldNotBe(empty);
 
     }
 
