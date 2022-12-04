@@ -22,8 +22,7 @@ public class MainPageTest extends Base {
         $(byXpath(BUTTON_OFFER_IN_SITE_HEADER))
                 .shouldBe(visible)
                 .click();
-        boolean buildingPageTransitionCheck = $(byXpath(BUILDING_PAGE_DESCRIPTION)).isDisplayed();
-        Assertions.assertTrue(buildingPageTransitionCheck,"Проверка перехода на страницу застройки при нажатии кнопки в хедере сайта");
+        Assertions.assertTrue($(byXpath(BUILDING_PAGE_DESCRIPTION)).isDisplayed());
 
     }
 
