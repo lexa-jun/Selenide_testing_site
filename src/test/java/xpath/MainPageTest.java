@@ -40,6 +40,7 @@ public class MainPageTest extends Base {
         $(byXpath(BANNER_DESCRIPTION_START_SALES_ZARECHNY))
                 .shouldBe(visible)
                 .shouldNotBe(empty);
+        Assertions.assertTrue($(byXpath(BANNER_START_SALES_ZARECHNY)).isDisplayed());
         closeWebDriver();
 
     }

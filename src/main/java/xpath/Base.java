@@ -8,11 +8,11 @@ public class Base {
 
     // Кнопка вверху сайта для перехода к предложению
     public static final String BUTTON_OFFER_IN_SITE_HEADER =
-            "//h2[contains(text(), \"Выберите квартиру\")]/../../../../header/a";
+            "//h2[contains(text(), \"Выберите квартиру\")]/../ancestor-or-self::div/header/a";
 
     // Текст на кнопке вверху сайта
     public static final String BUTTON_TEXT_OFFER_SITE_HEADER =
-            "//h2[contains(text(), \"Выберите квартиру\")]/../../../../header/a/p";
+            "//h2[contains(text(), \"Выберите квартиру\")]/../ancestor-or-self::div/header/a/p";
 
     // Заголовок банера
     public static final String BANNER_START_SALES_ZARECHNY =
