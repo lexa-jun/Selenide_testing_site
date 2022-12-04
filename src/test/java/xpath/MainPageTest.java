@@ -1,4 +1,4 @@
-package xpath.storage;
+package xpath;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPageTest extends BaseXpath {
+public class MainPageTest extends Base {
 
     @Test
     public void clickHeaderLinkButtonTest(){

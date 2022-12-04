@@ -1,9 +1,10 @@
-package xpath.storage;
+package xpath;
 
-public class BaseXpath {
+public class Base {
 
+    //  Стартовая страница
     public static final String LINK_TO_SITE =
-            "https://vatutinki.ru";  //  Стартовая страница
+            "https://vatutinki.ru";
 
     // Кнопка вверху сайта для перехода к предложению
     public static final String BUTTON_OFFER_IN_SITE_HEADER =
