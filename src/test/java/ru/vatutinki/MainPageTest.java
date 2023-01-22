@@ -4,7 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.empty;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -46,7 +47,9 @@ public class MainPageTest extends Base {
     public void showingOfferSlider() {
 
         open(LINK_TO_SITE);
-        $(byXpath(BANNER_BIG_WITH_BENEFITS)).scrollTo();
+        $(byXpath(BANNER_BIG_WITH_BENEFITS))
+                .scrollTo()
+                .shouldBe(visible);
         SelenideElement element = $(byXpath(BANNER_BIG_WITH_BENEFITS));
         actions().dragAndDropBy(element, -250, 0).perform();
         sleep(4000);
@@ -63,7 +66,8 @@ public class MainPageTest extends Base {
 
         open(LINK_TO_SITE);
         $(byXpath(SWITCHING_AREA_ADVANTAGES_FORWARD))
-                .scrollTo()
+                .scrollIntoView(false)
+                .shouldBe(visible)
                 .hover()
                 .click();
         Assertions.assertTrue($(byXpath(SWITCHING_AREA_ADVANTAGES_FORWARD)).isDisplayed());
@@ -76,8 +80,9 @@ public class MainPageTest extends Base {
 
         open(LINK_TO_SITE);
         $(byXpath(SWITCHING_AREA_ADVANTAGES_BACK))
-                .scrollTo()
+                .scrollIntoView(false)
                 .hover()
+                .shouldBe(visible)
                 .click();
         Assertions.assertTrue($(byXpath(SWITCHING_AREA_ADVANTAGES_BACK)).isDisplayed());
         closeWebDriver();
@@ -89,10 +94,29 @@ public class MainPageTest extends Base {
 
         open(LINK_TO_SITE);
         $(byXpath(SWITCHING_AREA_ADVANTAGES_BACK))
-                .scrollTo()
+                .scrollIntoView(false)
+                .shouldBe(visible)
                 .hover()
                 .click();
         Assertions.assertTrue($(byXpath(SWITCHING_AREA_ADVANTAGES_BACK)).isDisplayed());
+        closeWebDriver();
+
+    }
+
+    @Test
+    public void scrollingAdditionalOffersBlock() {
+
+        open(LINK_TO_SITE);
+        $(byXpath(BLOCK_OF_ADDITIONAL_OFFERS))
+                .scrollTo()
+                .shouldBe(visible);
+        SelenideElement element = $(byXpath(BLOCK_OF_ADDITIONAL_OFFERS));
+        actions().dragAndDropBy(element, -250, 0).perform();
+        sleep(4000);
+        SelenideElement elementBack = $(byXpath(BLOCK_OF_ADDITIONAL_OFFERS));
+        actions().dragAndDropBy(elementBack, 250, 0).perform();
+        sleep(4000);
+        Assertions.assertTrue($(byXpath(BLOCK_OF_ADDITIONAL_OFFERS)).isEnabled());
         closeWebDriver();
 
     }
@@ -102,7 +126,7 @@ public class MainPageTest extends Base {
 
         open(LINK_TO_SITE);
         $(byXpath(BUTTON_FORWARD_ADDITIONAL_OFFERS))
-                .scrollTo()
+                .scrollIntoView(false)
                 .hover()
                 .click();
         Assertions.assertTrue($(byXpath(BUTTON_FORWARD_ADDITIONAL_OFFERS)).isDisplayed());
@@ -115,15 +139,17 @@ public class MainPageTest extends Base {
 
         open(LINK_TO_SITE);
         $(byXpath(BUTTON_FORWARD_ADDITIONAL_OFFERS))
+                .scrollIntoView(false)
                 .click();
-        sleep(2000);
         $(byXpath(BUTTON_BACK_ADDITIONAL_OFFERS))
-                .scrollTo()
                 .hover()
+                .shouldBe(visible)
                 .click();
         Assertions.assertTrue($(byXpath(BUTTON_BACK_ADDITIONAL_OFFERS)).isDisplayed());
         closeWebDriver();
 
     }
+
+
 
 }

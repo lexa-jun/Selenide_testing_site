@@ -23,10 +23,6 @@ public class Base {
             "//h2[contains(text(),\"Выберите квартиру\")]" +
                     "/../../div/div[contains(@class, \"content_WPLni\")]/div/p";
 
-    // Текст описания страницы застройки
-    public static final String BUILDING_PAGE_DESCRIPTION =
-            "//h2[contains(text(), \"Заселение корпуса 2/2\")]";
-
     public static final String BANNER_BIG_WITH_BENEFITS =
             "//h2[contains(text(), \"Выберите квартиру\")]/../../div[contains(@class, \"BannersSlider_dTmLr\")]/div";
 
@@ -57,5 +53,11 @@ public class Base {
             "//h2[contains(text(), \"Выберите квартиру\")]/../../div[contains(@class, \"sliderAdvantages_dqaME\")]" +
                     "/div[contains(@class, \"swiperNav_aCBzN\")]/div[contains(@class, \"controls_iw1yk\")]" +
                     "/div[contains(@class, \"btnPrev_1R-II\")]";
+
+    public static final String BLOCK_OF_ADDITIONAL_OFFERS =
+            "//h2[contains(text(), \"Выберите квартиру\")]/../../div[contains(@class, \"sliderAdvantages_dqaME\")]" +
+                    "/div[contains(@class, \"swiper-backface-hidden\")]";
+
+
 
 }
